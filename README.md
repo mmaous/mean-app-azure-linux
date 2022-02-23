@@ -1,6 +1,6 @@
 # MEAN stack on an Azure Linux virtual machine
 
-<div  align="center"><img src="./node+azure.png" width="380" height="140" /></div>
+<div  align="center"><img src="https://user-images.githubusercontent.com/17799273/155406524-4bc73a77-a35f-4dd5-b3f0-ad195d256677.png" width="150" height="150" /></div>
 
 ## Table of Contents
 
