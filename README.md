@@ -1,11 +1,6 @@
 # Project Title
 
-<img src="./node+azure.png"/>
-
-<style> * {
-  text-align: v;
-}
-</style>
+<div  align="center"><img src="./node+azure.png" width="380" height="140" /></div>
 
 ## Table of Contents
 
@@ -16,7 +11,7 @@
 
 ## About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+This repo breaks down the process of setting up a MEAN-based web application on a new Azure Linux virtual machine.
 
 ## Getting Started <a name = "getting_started"></a>
 
@@ -24,11 +19,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
-
-```
-Give examples
-```
+- Microsoft Azure Account;
+- Experience using Bash from the command-line;
+- Familiarity or interest in using JavaScript to build web applications.
 
 ### Installing
 
