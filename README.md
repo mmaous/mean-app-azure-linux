@@ -1,4 +1,4 @@
-# Project Title
+# MEAN stack on an Azure Linux virtual machine
 
 <div  align="center"><img src="./node+azure.png" width="380" height="140" /></div>
 
@@ -12,7 +12,7 @@
 
 ## About <a name = "about"></a>
 
-This repo breaks down the process of setting up a MEAN-based web application on a new Azure Linux virtual machine.
+This repo breaks down the process of Building and running a web application with the  a MEAN-based web application on a new Azure Linux virtual machine.
 
 <!-- ## Getting Started <a name = "getting_started"></a>
 
