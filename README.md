@@ -29,7 +29,7 @@ This repo breaks down the process of Building and running a web application with
 So, in order to create a VM you've to create a resource group.
 
 To simplify the process, I will declare that value to reuse later on.
-```powershell
+```bash
 $RESOURCE_GROUP_NAME = <CHOOSE_YOUR_RESOURCE_GROUP_NAME>
 # example: $RESOURCE_GROUP_NAME = "MEAN-STACK-RG"
 $APP_NAME = <CHOOSE_YOUR_APP_NAME>
@@ -37,13 +37,13 @@ $ADMIN_USERNAME = <CHOOSE_ADMIN_NAME>
 
 ```
 1. Creating the resource group :
- ````powershell
+ ````bash
  az group create --name $RESOURCE_GROUP_NAME --location "eastus"
 
  ````
 2. Next, We will creating Virtual Machine :
 
- ````powershell
+ ````bash
 az vm create \
   --resource-group $RESOURCE_GROUP_NAME \
   --name $APP_NAME \
@@ -62,12 +62,12 @@ az vm create \
   "publicIpAddress": "",
 }
 ``` 
-```powershell
+```bash
 $VM_IP_ADDRESS = <publicIpAddress>
 
 ```
 3. Next, We allow the incoming HTTP traffic to the web application you'll later create, by opening the port 80:
-````powershell
+````bash
 az vm open-port \
   --port 80 \
   --resource-group $RESOURCE_GROUP_NAME \
@@ -75,7 +75,7 @@ az vm open-port \
 ````
 
 4. Create an SSH connection to your VM.
-````POWERSHELL
+````bash
 ssh $ADMIN_USERNAME@$$VM_IP_ADDRESS
 
 ````
