@@ -2,46 +2,89 @@
 
 <div  align="center"><img src="https://user-images.githubusercontent.com/17799273/155406524-4bc73a77-a35f-4dd5-b3f0-ad195d256677.png" width="150" height="150" /></div>
 
+*****************************************************************
 ## Table of Contents
 
 - [About](#about)
 - [Getting Started](#getting_started)
   - [Prerequisites](#prerequisites)
+  - [Create a VM host your web application](#create-vm)
 <!-- - [Usage](#usage)
 - [Contributing](../CONTRIBUTING.md) -->
-
+*****************************************************************
 ## About <a name = "about"></a>
 
-This repo breaks down the process of Building and running a web application with the  a MEAN-based web application on a new Azure Linux virtual machine.
 
-<!-- ## Getting Started <a name = "getting_started"></a>
+This repo breaks down the process of Building and running a web application with the  a MEAN based web application on a new Azure Linux virtual machine. 
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system. -->
+>MEAN is a development stack for building and hosting web applications. MEAN is an acronym for its component parts: MongoDB, Express, AngularJS, and Node.js.
 
-### Prerequisites <a name = "prerequisites"></a>
+*****************************************************************
+## Getting Started <a name = "getting_started"></a>
 
-- Microsoft Azure Account;
-- Experience using Bash from the command-line;
-- Familiarity or interest in using JavaScript to build web applications.
-<!-- 
-### Installing
+&emsp; First, We have to create a virtual machine to host our MEAN  web application, to do so, we will use Azure CLI, [Install Azure CLI] if you don't have it installed on your system. Or, login to your azure account and use Azure Cloud Shell.
 
-A step by step series of examples that tell you how to get a development env running.
+### Create a VM to host your web application  <a name = "create-vm"></a>
 
-Say what the step will be
+&ensp; Azure groups resources (a container that holds the resources) in whats called **resource group**, before you create other resources on Azure.\
+So, in order to create a VM you've to create a resource group.
 
-```
-Give the example
-```
-
-And repeat
+To simplify the process, I will declare that value to reuse later on.
+```powershell
+$RESOURCE_GROUP_NAME = <CHOOSE_YOUR_RESOURCE_GROUP_NAME>
+# example: $RESOURCE_GROUP_NAME = "MEAN-STACK-RG"
+$APP_NAME = <CHOOSE_YOUR_APP_NAME>
+$ADMIN_USERNAME = <CHOOSE_ADMIN_NAME>
 
 ```
-until finished
+1. Creating the resource group :
+ ````powershell
+ az group create --name $RESOURCE_GROUP_NAME --location "eastus"
+
+ ````
+2. Next, We will creating Virtual Machine :
+
+ ````powershell
+az vm create \
+  --resource-group $RESOURCE_GROUP_NAME \
+  --name $APP_NAME \
+  --image Canonical:0001-com-ubuntu-server-focal:20_04-lts:latest \
+  --admin-username $ADMIN_USERNAME \
+  --generate-ssh-keys
+
+ ````
+
+>Wait for it to finish, After its done you should see an Object, Copy & save the `publicIpAddress` 
+```json
+{
+  "fqdns": "",
+  "id": "/subscriptions/. . . ./$APP_NAME",
+  ...
+  "publicIpAddress": "",
+}
+``` 
+```powershell
+$VM_IP_ADDRESS = <publicIpAddress>
+
 ```
+3. Next, We allow the incoming HTTP traffic to the web application you'll later create, by opening the port 80:
+````powershell
+az vm open-port \
+  --port 80 \
+  --resource-group $RESOURCE_GROUP_NAME \
+  --name $APP_NAME \
+````
 
-End with an example of getting some data out of the system or using it for a little demo.
+4. Create an SSH connection to your VM.
+````POWERSHELL
+ssh $ADMIN_USERNAME@$$VM_IP_ADDRESS
 
-## Usage <a name = "usage"></a>
+````
+>When prompted, enter **yes** to trust future connections.
 
-Add notes about how to use the system. -->
+
+
+*****************************************************************
+ <!-- varialbles -->
+
+ [Install Azure CLI]: https://aka.ms/install-azure-cli
