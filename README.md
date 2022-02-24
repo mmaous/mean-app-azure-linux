@@ -7,7 +7,6 @@
 
 - [About](#about)
 - [Getting Started](#getting_started)
-  - [Prerequisites](#prerequisites)
   - [Create a VM host your web application](#create-vm)
 <!-- - [Usage](#usage)
 - [Contributing](../CONTRIBUTING.md) -->
