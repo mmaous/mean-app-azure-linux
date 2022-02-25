@@ -138,7 +138,7 @@ Install the Nodejs:
 $ sudo apt install nodejs
 ```
 
-When installation is complete, Run nodejs -v to verify the installation:
+When installation is complete, Run ``node -v`` to verify the installation:
 
 ```ps
 $ node -v
