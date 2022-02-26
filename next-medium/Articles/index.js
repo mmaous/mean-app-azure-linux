@@ -11,7 +11,6 @@ mongoose
   .connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true,
   })
   .then(() => {
     console.log('Connected to MongoDB');
@@ -24,6 +23,6 @@ app.use(bodyParser.json());
 require('./app/routes')(app);
 
 app.set('port', 80);
-app.listen(app.get('port'), function () {
+app.listen(app.get('port'), () => {
   console.log('Server up: http://localhost:' + app.get('port'));
 });

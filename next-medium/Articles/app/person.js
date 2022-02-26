@@ -22,8 +22,6 @@ const schema = new mongoose.Schema({
   },
 });
 
-schema.plugin(UniqueValidator);
-
 schema.set('toJSON', {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString();
