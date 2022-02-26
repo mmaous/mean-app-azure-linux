@@ -21,7 +21,7 @@ routes = (app) => {
     try {
       const savedPerson = await newPerson.save();
       res.json({
-        message: 'Successfully added book',
+        message: 'Successfully added Person',
         person: savedPerson.toJSON(),
       });
     } catch (error) {
@@ -33,8 +33,8 @@ routes = (app) => {
     Person.findOneAndRemove(req.query)
       .then((result) => {
         res.json({
-          message: 'Successfully deleted the book',
-          book: result,
+          message: 'Successfully deleted the Person',
+          person: result,
         });
       })
       .catch((error) => console.error(error.message));
