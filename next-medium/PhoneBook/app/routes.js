@@ -43,4 +43,4 @@ routes = (app) => {
     res.sendFile(path.join(__dirname + '/public', 'index.html'));
   });
 };
-module.exports = routes
+module.exports = routes;
