@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+  </head>
+  <body class="p-10 px-20">
+    <div class="">
+      <div class="p-2 w-24">
+        <table>
+          <tr class="p-3.5">
+            <td class="p-2.5">Name:</td>
+            <td class="p-2.5">
+              <input
+                class="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
+                type="text"
+                ng-model="Name"
+              />
+            </td>
+            <td class="p-2.5">Phone:</td>
+            <td class="p-2.5">
+              <input
+                class="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
+                type="text"
+                ng-model="Phone"
+              />
+            </td>
+          </tr>
+          <tr class="p-3.5">
+            <td class="p-2.5">Street:</td>
+            <td class="p-2.5">
+              <input
+                class="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
+                type="text"
+                ng-model="Street"
+              />
+            </td>
+            <td class="p-2.5">City:</td>
+            <td class="p-2.5">
+              <input
+                class="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
+                ng-model="City"
+              />
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="ml-20">
+        <button
+          class="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-8 py-2 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 mr-2 mb-2"
+          ng-click="addPerson()"
+        >
+          Add
+        </button>
+      </div>
+    </div>
+
+    <div class="flex flex-col">
+      <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="inline-block py-2 min-w-full sm:px-6 lg:px-8">
+          <div class="overflow-hidden shadow-md sm:rounded-lg">
+            <table class="table-auto">
+              <thead>
+                <tr>
+                  <th
+                    scope="col"
+                    class="py-3 px-6 text-xs font-medium tracking-wider text-left uppercase"
+                  >
+                    Name
+                  </th>
+                  <th
+                    scope="col"
+                    class="py-3 px-6 text-xs font-medium tracking-wider text-left uppercase"
+                  >
+                    Phone
+                  </th>
+                  <th
+                    scope="col"
+                    class="py-3 px-6 text-xs font-medium tracking-wider text-left uppercase"
+                  >
+                    Street
+                  </th>
+                  <th
+                    scope="col"
+                    class="py-3 px-6 text-xs font-medium tracking-wider text-left uppercase"
+                  >
+                    City
+                  </th>
+                  <th
+                    scope="col"
+                    class="py-3 px-6 text-xs font-medium tracking-wider text-left uppercase"
+                  >
+                    Take an Action!
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="bg-white">
+                  <td class="py-4 px-6 text-sm font-medium whitespace-nowrap">
+                    Kayji kuroma
+                  </td>
+                  <td class="py-4 px-6 text-sm font-medium whitespace-nowrap">
+                    1222-Z4-3423
+                  </td>
+                  <td class="py-4 px-6 text-sm font-medium whitespace-nowrap">
+                    1233 Tealmote St
+                  </td>
+                  <td class="py-4 px-6 text-sm font-medium whitespace-nowrap">
+                    Gurtaiba
+                  </td>
+                  <td class="py-4 px-6 text-sm font-medium whitespace-nowrap">
+                    <input
+                      class="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 hover:bg-gray-600 hover:text-white block w-24 p-1.5"
+                      type="button"
+                      value="Delete"
+                      data-ng-click="deletePerson(person)"
+                    />
+                  </td>
+                </tr>
+                <tr ng-repeat="person in persons">
+                  <td class="py-4 px-6 text-sm font-medium whitespace-nowrap">
+                    person.name}}
+                  </td>
+                  <td class="py-4 px-6 text-sm font-medium whitespace-nowrap">
+                    person.phone}}
+                  </td>
+                  <td class="py-4 px-6 text-sm font-medium whitespace-nowrap">
+                    person.street}}
+                  </td>
+                  <td class="py-4 px-6 text-sm font-medium whitespace-nowrap">
+                    person.city}}
+                  </td>
+                  <td class="py-4 px-6 text-sm font-medium whitespace-nowrap">
+                    <input
+                      class="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 hover:bg-gray-600 hover:text-white p-2.5"
+                      type="button"
+                      value="Delete"
+                      data-ng-click="deletePerson(person)"
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
