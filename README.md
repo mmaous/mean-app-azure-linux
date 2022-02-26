@@ -23,7 +23,7 @@ This repo breaks down the process of Building and running a web application with
 
 ## Getting Started <a name = "getting_started"></a>
 
-&emsp; First, We have to create a virtual machine to host our MEAN web application, to do so, we will use Azure CLI, [Install Azure CLI] if you don't have it installed on your system. Or, login to your azure account and use Azure Cloud ps.
+&emsp; First, We have to create a virtual machine to host our MEAN web application, to do so, we will use Azure CLI, [Install Azure CLI] if you don't have it installed on your system. Or, login to your azure account and use Azure Cloud Shell.
 
 ###  - Create a VM to host your web application <a name="create-vm"></a>
 
